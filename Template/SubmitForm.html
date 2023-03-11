@@ -1,0 +1,15 @@
+{% load static %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+</head>
+<section class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto mt-5">
+            <h1 class="text-center mb-4">Thank you for your booking!</h1>
+            <p class="text-center mb-5 text-success">Your reservation has been confirmed.</p>
+            <div class="text-center">
+                <a class="btn btn-primary" href="{% url 'home' %}">Home</a>
+            </div>
+        </div>
+    </div>
+</section>

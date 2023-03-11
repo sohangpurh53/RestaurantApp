@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+{% block content %}
+{% include 'Head.html' %}
+{% load static %}
+<body class="sub_page">
+
+  <div class="hero_area">
+    {% include 'HeroImg.html' %}
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        {% include 'Navbar.html' %}
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- food section -->
+
+  <section class="food_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Our Menu
+        </h2>
+      </div>
+
+      <ul class="filters_menu">
+        <li class="active" data-filter="*">All</li>
+        <li data-filter=".burger">Burger</li>
+        <li data-filter=".pizza">Pizza</li>
+        <li data-filter=".pasta">Pasta</li>
+        <li data-filter=".fries">Fries</li>
+      </ul>
+
+      <div class="filters-content">
+        <div class="row grid">
+          {% for menu in menus %}
+          <div class="col-sm-6 col-lg-4 all pasta">
+            <div class="box">
+              <div>
+                <a href="{% url 'singlemenu' menu.id %}" class="">
+                  <div class="img-box">
+                    <img src={{menu.image}} alt="">
+                  </div>
+                </a>
+                <div class="detail-box">
+                  <h5>
+                    {{menu.name}}
+                  </h5>
+                  <p>
+                    {{menu.detail}}
+                  </p>
+                  <div class="options">
+                    <h6>
+                      ${{menu.price}}
+                    </h6>
+                    <a href="">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                      </svg>
+                    </a>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="btn-box">
+        <a href="">
+          View More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- end food section -->
+
+  <!-- footer section -->
+  {% include 'Footer.html' %}
+  <!-- footer section -->
+
+
+  {% include 'Script.html' %}
+  {% endblock %}
+
+</body>
+
+</html>

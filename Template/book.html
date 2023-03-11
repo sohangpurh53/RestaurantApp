@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+{% block content %}
+{% include 'Head.html' %}
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    {% include 'HeroImg.html' %}
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        {% include 'Navbar.html' %}
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- book section -->
+  {% include 'Form.html' %}
+  <!-- end book section -->
+
+  <!-- footer section -->
+  {% include 'Footer.html' %}
+  <!-- footer section -->
+
+  {% include 'Script.html' %}
+  {% endblock %}
+
+</body>
+
+</html>
